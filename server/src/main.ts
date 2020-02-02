@@ -1,7 +1,8 @@
 import app from './app';
 import * as mongoose from 'mongoose';
+import config from '../config';
 
-const PORT = 5000;
+const PORT = config.port;
 const MONGO_URI = 'mongodb://localhost:27017/blog';
 
 app.listen(PORT, () => {

@@ -1,44 +1,37 @@
 // User.js
-import * as mongoose from 'mongoose';
+import {Schema, Model, model} from 'mongoose';
 import * as bcrypt from 'bcrypt';
+import {IUserDocument} from './interfaces/IUserDocument';
+
 const saltRounds = 10;
 
+export interface IUser extends IUserDocument {
+    comparePassword(password: string): Promise<boolean>;
+}
 
-const UserSchema = new mongoose.Schema({
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true }
+const UserSchema = new Schema({
+    email: {type: String, required: true, unique: true},
+    password: {type: String, required: true}
 });
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
     // Check if document is new or a new password has been set
     if (this.isNew || this.isModified('password')) {
         // Saving reference to this because of changing scopes
-        const document:any = this;
-        bcrypt.hash(document.password, saltRounds,
-            function(err, hashedPassword) {
-                if (err) {
-                    next(err);
-                }
-                else {
-                    document.password = hashedPassword;
-                    next();
-                }
-            });
+        const document: any = this;
+        return bcrypt.hash(document.password, saltRounds).then((hash: string) => {
+            document.password = hash;
+            next();
+        });
     } else {
         next();
     }
 });
 
-UserSchema.methods.isCorrectPassword = function(password, callback){
-    bcrypt.compare(password, this.password, function(err, same) {
-        if (err) {
-            callback(err);
-        } else {
-            callback(err, same);
-        }
-    });
+UserSchema.methods.comparePassword = function (password): Promise<boolean> {
+    return bcrypt.compare(password, this.password);
 }
 
-const User = mongoose.model('User', UserSchema);
+const User = model<IUser>('User', UserSchema);
 export {User};
 

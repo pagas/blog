@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = require("./app");
 var mongoose = require("mongoose");
-var PORT = 5000;
+var config_1 = require("../config");
+var PORT = config_1.default.port;
 var MONGO_URI = 'mongodb://localhost:27017/blog';
 app_1.default.listen(PORT, function () {
     console.log("Server started on port " + PORT);
