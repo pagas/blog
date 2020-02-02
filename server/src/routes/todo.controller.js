@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
-var todo_1 = require("./todo");
+var todo_1 = require("../todo");
 var todoRouter = express.Router();
 exports.todoRouter = todoRouter;
 todoRouter.get('/todo', function (req, resp) { return __awaiter(void 0, void 0, void 0, function () {
