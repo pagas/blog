@@ -4,12 +4,13 @@ var express = require("express");
 var jwt = require("jsonwebtoken");
 var user_1 = require("../models/user");
 var config_1 = require("../config");
+var request_authentication_1 = require("../middleware/request_authentication");
 var mainRouter = express.Router();
 exports.mainRouter = mainRouter;
 mainRouter.get('/api/home', function (req, res) {
     res.send('Welcome, Dovile!');
 });
-mainRouter.get('/api/secret', function (req, res) {
+mainRouter.get('/api/secret', request_authentication_1.requestAuthentication, function (req, res) {
     res.send('The password is potato');
 });
 mainRouter.post('/api/authenticate', function (req, res) {
@@ -53,4 +54,7 @@ mainRouter.post('/api/authenticate', function (req, res) {
             });
         }
     });
+});
+mainRouter.get('/checkToken', request_authentication_1.requestAuthentication, function (req, res) {
+    res.sendStatus(200);
 });

@@ -5,7 +5,6 @@ var cors = require("cors");
 var bodyparser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var request_logger_middleware_1 = require("./middleware/request_logger_middleware");
-var request_authentication_1 = require("./middleware/request_authentication");
 var todo_controller_1 = require("./routes/todo.controller");
 var main_controller_1 = require("./routes/main.controller");
 var user_controller_1 = require("./routes/user.controller");
@@ -15,7 +14,6 @@ app.use(bodyparser.json());
 app.use(cookieParser());
 // TODO - add more middle ware
 app.use(request_logger_middleware_1.requestLoggerMiddleware);
-app.use(request_authentication_1.requestAuthenticationMiddleware);
 app.use(todo_controller_1.todoRouter);
 app.use(main_controller_1.mainRouter);
 app.use(user_controller_1.userRouter);

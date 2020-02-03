@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
+import * as jwt from 'jsonwebtoken';
 import config from '../config';
 import {Request, Response, NextFunction} from 'express';
 
-const requestAuthenticationMiddleware = (req:Request, res: Response, next:NextFunction) => {
+const requestAuthentication = (req:Request, res: Response, next:NextFunction) => {
     const token = req.cookies.token;
     if (!token) {
         res.status(401).send('Unauthorized: No token provided');
@@ -17,4 +17,4 @@ const requestAuthenticationMiddleware = (req:Request, res: Response, next:NextFu
         });
     }
 };
-export {requestAuthenticationMiddleware};
+export {requestAuthentication};

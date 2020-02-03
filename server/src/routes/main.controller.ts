@@ -2,15 +2,18 @@ import * as express from 'express';
 import * as jwt from 'jsonwebtoken';
 import {User} from '../models/user';
 import config from '../config';
+import {requestAuthentication} from '../middleware/request_authentication';
 
 const mainRouter = express.Router();
 
 mainRouter.get('/api/home', function (req, res) {
     res.send('Welcome, Dovile!');
 });
-mainRouter.get('/api/secret', function (req, res) {
+
+mainRouter.get('/api/secret', requestAuthentication, function (req, res) {
     res.send('The password is potato');
 });
+
 mainRouter.post('/api/authenticate', function (req, res) {
     const {email, password} = req.body;
     User.findOne({email}, function (err, user) {
@@ -49,6 +52,10 @@ mainRouter.post('/api/authenticate', function (req, res) {
             });
         }
     });
+});
+
+mainRouter.get('/checkToken', requestAuthentication, function(req, res) {
+    res.sendStatus(200);
 });
 
 export {mainRouter};
