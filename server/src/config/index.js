@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var dotenvFlow = require("dotenv-flow");
+dotenvFlow.config({
+    path: './src/config'
+});
 // config() will read your .env file, parse the contents, assign it to process.env.
-dotenvFlow.config({});
 exports.default = {
     port: process.env.PORT,
     databaseURL: process.env.DATABASE_URI,

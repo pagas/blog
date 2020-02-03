@@ -1,8 +1,10 @@
 import * as dotenvFlow from 'dotenv-flow';
 
-// config() will read your .env file, parse the contents, assign it to process.env.
-dotenvFlow.config({});
+dotenvFlow.config({
+    path: './src/config'
+});
 
+// config() will read your .env file, parse the contents, assign it to process.env.
 export default {
     port: process.env.PORT,
     databaseURL: process.env.DATABASE_URI,

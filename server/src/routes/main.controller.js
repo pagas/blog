@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var jwt = require("jsonwebtoken");
 var user_1 = require("../models/user");
-var config_1 = require("../../config");
+var config_1 = require("../config");
 var mainRouter = express.Router();
 exports.mainRouter = mainRouter;
 mainRouter.get('/api/home', function (req, res) {
