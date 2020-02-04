@@ -5,6 +5,7 @@ import withAuth from './components/withAuth';
 import Home from "./components/main/Home.jsx";
 import Secret from "./components/main/Secret";
 import Login from "./components/main/Login";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/secret">Secret</Link></li>
                     <li><Link to="/login">Login</Link></li>
+                    <li><Link to="/logout">Logout</Link></li>
                 </ul>
                 <Switch>
                     <Route path="/" exact component={Home} />
