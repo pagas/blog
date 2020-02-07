@@ -6,6 +6,9 @@ import Home from "./components/main/Home.jsx";
 import Secret from "./components/main/Secret";
 import Login from "./components/main/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddToDo from './containers/AddToDo';
+import ToDoListContainer from './containers/ToDoListContainer';
+import {Col, Row, Container} from 'react-bootstrap'
 
 function App() {
     return (
@@ -24,6 +27,18 @@ function App() {
                     <Route path="/login" component={Login} />
                 </Switch>
             </Router>
+
+            <Container>
+                <Row className="row">
+                    <Col xs={12}>
+                        <h1>To Do List</h1>
+                        <AddToDo/>
+                        <ToDoListContainer />
+                    </Col>
+                </Row>
+            </Container>
+
+
         </div>
     );
 }
