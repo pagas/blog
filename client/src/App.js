@@ -6,9 +6,8 @@ import Home from "./components/main/Home.jsx";
 import Secret from "./components/main/Secret";
 import Login from "./components/main/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AddToDo from './containers/AddToDo';
-import ToDoListContainer from './containers/ToDoListContainer';
-import {Col, Row, Container} from 'react-bootstrap'
+import Skypey from './components/skypey';
+import ToDoApp from './components/todo';
 
 function App() {
     return (
@@ -20,25 +19,17 @@ function App() {
                     <li><Link to="/secret">Secret</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/logout">Logout</Link></li>
+                    <li><Link to="/skypey">skypey</Link></li>
+                    <li><Link to="/todo">Todo</Link></li>
                 </ul>
                 <Switch>
                     <Route path="/" exact component={Home} />
                     <Route path="/secret" component={withAuth(Secret)} />
                     <Route path="/login" component={Login} />
+                    <Route path="/skypey" component={Skypey} />
+                    <Route path="/todo" component={ToDoApp} />
                 </Switch>
             </Router>
-
-            <Container>
-                <Row className="row">
-                    <Col xs={12}>
-                        <h1>To Do List</h1>
-                        <AddToDo/>
-                        <ToDoListContainer />
-                    </Col>
-                </Row>
-            </Container>
-
-
         </div>
     );
 }

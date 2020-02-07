@@ -1,6 +1,5 @@
-
 import { connect } from 'react-redux';
-import ToDoList from '../components/todo/ToDoList';
+import ToDoList from '../../components/todo/ToDoList';
 
 const mapStateToProps = state => {
     return {
