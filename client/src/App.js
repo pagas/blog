@@ -13,7 +13,7 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <ul class="d-flex">
+                <ul className="d-flex">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/secret">Secret</Link></li>
                     <li><Link to="/login">Login</Link></li>
