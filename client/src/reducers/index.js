@@ -1,23 +1,8 @@
-import { ADD_TODO } from '../actions';
+import {combineReducers} from 'redux';
+import toDoApp from './toDoApp';
 
-const initialState = {
-    toDoList: []
-};
+const reducer = combineReducers({
+        toDoList: toDoApp
+});
 
-export default function toDoApp(state = initialState, action) {
-    switch (action.type) {
-        case ADD_TODO:
-            let newToDoList = [
-                ...state.toDoList,
-                {
-                    ...action.toDoItem
-                }
-            ];
-            return {
-                ...state,
-                toDoList: newToDoList
-            };
-        default:
-            return state;
-    }
-}
+export default reducer;
