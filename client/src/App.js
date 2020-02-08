@@ -12,9 +12,8 @@ import ToDoApp from './components/todo';
 function App() {
     return (
         <div className="App">
-            <h1>The main app is here</h1>
             <Router>
-                <ul>
+                <ul class="d-flex">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/secret">Secret</Link></li>
                     <li><Link to="/login">Login</Link></li>
