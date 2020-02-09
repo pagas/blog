@@ -1,4 +1,4 @@
-import { ADD_TODO } from '../actions';
+import { ADD_TODO } from '../constants/action-types';
 import * as data  from "../commands/skypey-data-generator";
 
 export default function contacts(state = data.contacts, action) {

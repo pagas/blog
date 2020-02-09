@@ -1,8 +1,8 @@
 import React from 'react';
-import User from './user';
+import UserContainer from '../../containers/skypey/userContainer';
 
 const Sidebar = ({contacts}) => <aside className="Sidebar">
-    {contacts.map(contact => <User user={contact} key={contact.user_id} />)}
+    {contacts.map(contact => <UserContainer user={contact} key={contact.user_id} />)}
 </aside>;
 
 

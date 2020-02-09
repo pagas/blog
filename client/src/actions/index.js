@@ -1,4 +1,4 @@
-export const ADD_TODO = 'ADD_TODO';
+import { SET_ACTIVE_USER_ID, ADD_TODO} from "../constants/action-types";
 
 export function addToDo(title) {
     return {
@@ -9,3 +9,8 @@ export function addToDo(title) {
         }
     };
 }
+
+export const setActiveUserId = id => ({
+    type: SET_ACTIVE_USER_ID,
+    payload: id
+});

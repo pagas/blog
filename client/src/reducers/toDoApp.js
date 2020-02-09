@@ -1,4 +1,4 @@
-import { ADD_TODO } from '../actions';
+import { ADD_TODO } from '../constants/action-types';
 
 export default function toDoApp(state = [], action) {
     switch (action.type) {
