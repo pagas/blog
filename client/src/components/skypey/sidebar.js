@@ -1,8 +1,9 @@
 import React from 'react';
+import User from './user';
 
-const Skypey = () => <aside className="Sidebar">
-    Sidebar
+const Sidebar = ({contacts}) => <aside className="Sidebar">
+    {contacts.map(contact => <User user={contact} key={contact.user_id} />)}
 </aside>;
 
 
-export default Skypey;
+export default Sidebar;

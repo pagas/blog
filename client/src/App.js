@@ -6,7 +6,7 @@ import Home from "./components/main/Home.jsx";
 import Secret from "./components/main/Secret";
 import Login from "./components/main/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Skypey from './components/skypey';
+import SkypeyContainer from './containers/skypey/skypeyContainer';
 import ToDoApp from './components/todo';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
                     <Route path="/" exact component={Home} />
                     <Route path="/secret" component={withAuth(Secret)} />
                     <Route path="/login" component={Login} />
-                    <Route path="/skypey" component={Skypey} />
+                    <Route path="/skypey" component={SkypeyContainer} />
                     <Route path="/todo" component={ToDoApp} />
                 </Switch>
             </Router>
