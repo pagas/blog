@@ -1,4 +1,4 @@
-import { SET_ACTIVE_USER_ID, SET_TYPING_VALUE, ADD_TODO} from "../constants/action-types";
+import { SET_ACTIVE_USER_ID, SET_TYPING_VALUE, ADD_TODO, SEND_MESSAGE} from "../constants/action-types";
 
 export function addToDo(title) {
     return {
@@ -19,3 +19,11 @@ export const setTypingValue = value => ({
     type: SET_TYPING_VALUE,
     payload: value
 })
+
+export const sendMessage = (message, userId) => ({
+    type: SEND_MESSAGE,
+    payload: {
+        message,
+        userId
+    }
+});

@@ -1,8 +1,8 @@
 import React from "react";
 
-const MessageInput = ({ value, handleChange }) => {
+const MessageInput = ({ value, handleChange, handleSubmit }) => {
     return (
-        <form className="Message">
+        <form className="Message" onSubmit={handleSubmit}>
             <input
                 className="Message__input"
                 onChange={handleChange}
