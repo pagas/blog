@@ -1,17 +1,22 @@
 import React from "react";
 import {connect} from "react-redux";
 import Header from '../../components/skypey/header';
-const ChatWindowContainer = ({ activeUser }) => {
+import Chats from "../../components/skypey/chats";
+import _ from 'lodash';
+
+const ChatWindowContainer = ({ activeUser, activeMsgs }) => {
     return (
         <div className="ChatWindow">
             <Header user={activeUser} />
+            <Chats messages={_.values(activeMsgs)}/>
         </div>
     );
 };
 
-const mapStateToProps = ({activeUserId, contacts}) => {
+const mapStateToProps = ({activeUserId, contacts, messages}) => {
     return {
-        activeUser: contacts[activeUserId]
+        activeUser: contacts[activeUserId],
+        activeMsgs: messages[activeUserId]
     }
 }
 

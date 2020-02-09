@@ -112,6 +112,12 @@
     color: #fff;
 }
 
+.ChatWindow {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 /* not small devices  */
 @media (min-width: 576px) {
     .skypey .Sidebar {
