@@ -1,5 +1,5 @@
 // User.js
-import {Schema, Model, model} from 'mongoose';
+import {Schema, model} from 'mongoose';
 import * as bcrypt from 'bcrypt';
 import {IUserDocument} from './interfaces/IUserDocument';
 
