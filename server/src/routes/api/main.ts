@@ -1,8 +1,8 @@
 import * as express from 'express';
 import * as jwt from 'jsonwebtoken';
-import {User} from '../models/user';
-import config from '../config';
-import {requestAuthentication} from '../middleware/request_authentication';
+import {User} from '../../models/user';
+import config from '../../config';
+import {requestAuthentication} from '../../middleware/request_authentication';
 
 const mainRouter = express.Router();
 
@@ -58,4 +58,4 @@ mainRouter.get('/checkToken', requestAuthentication, function(req, res) {
     res.sendStatus(200);
 });
 
-export {mainRouter};
+export default mainRouter;

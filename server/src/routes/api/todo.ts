@@ -1,5 +1,5 @@
 import * as express from 'express';
-import {TodoModel} from '../todo';
+import {TodoModel} from '../../todo';
 const todoRouter = express.Router();
 
 todoRouter.get('/todo', async (req: express.Request, resp: express.Response) => {
@@ -36,4 +36,4 @@ todoRouter.delete('/todo/:id', async (req: express.Request, resp: express.Respon
     resp.end();
 });
 
-export {todoRouter};
+export default todoRouter;

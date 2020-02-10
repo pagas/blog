@@ -1,6 +1,6 @@
 import * as express from 'express';
 const userRouter = express.Router();
-import {User} from '../models/user';
+import {User} from '../../models/user';
 
 // POST route to register a user
 userRouter.post('/api/register', function(req, res) {
@@ -16,4 +16,4 @@ userRouter.post('/api/register', function(req, res) {
     });
 });
 
-export {userRouter};
+export default userRouter;
