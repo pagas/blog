@@ -4,9 +4,7 @@ import * as bodyparser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 
 import {requestLoggerMiddleware} from './middleware/request_logger_middleware';
-import {todoRouter} from "./routes/todo.controller";
-import {mainRouter} from "./routes/main.controller";
-import {userRouter} from "./routes/user.controller";
+import apiRouter from "./routes";
 
 const app = express();
 app.use(cors());
@@ -15,8 +13,6 @@ app.use(cookieParser());
 
 // TODO - add more middle ware
 app.use(requestLoggerMiddleware);
-app.use(todoRouter);
-app.use(mainRouter);
-app.use(userRouter);
+app.use(apiRouter);
 
 export default app;

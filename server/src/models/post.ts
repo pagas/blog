@@ -1,7 +1,7 @@
 import {Schema, model} from "mongoose";
-import {IArticleDocument} from './interfaces/IArticleDocument';
+import {IPostDocument} from './interfaces/IPostDocument';
 
-export interface IArticle extends IArticleDocument {
+export interface IPost extends IPostDocument {
 }
 
 const ArticleSchema = new Schema({
@@ -11,5 +11,5 @@ const ArticleSchema = new Schema({
     created: {type: Date, default: Date.now, ref: 'User', required: true}
 });
 
-const Article = model<IArticle>('Article', ArticleSchema);
-export {Article};
+const Post = model<IPost>('Post', ArticleSchema);
+export {Post};
