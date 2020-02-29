@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.css';
 import Sidebar from '../../components/skypey/sidebar'
 import Main from '../../components/skypey/main';
 import { connect } from 'react-redux'
