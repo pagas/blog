@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
+import './sass/app.scss';
 import withAuth from './components/withAuth';
 import Home from "./components/main/Home.jsx";
 import Secret from "./components/main/Secret";
