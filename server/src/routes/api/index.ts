@@ -5,8 +5,8 @@ import todo from './todo';
 import user from './user';
 const router = express.Router();
 
-router.use('/post', post);
-router.use('/main', main);
+router.use(main);
+router.use('/posts', post);
 router.use('/todo', todo);
 router.use('/user', user);
 

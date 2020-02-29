@@ -65,7 +65,7 @@ function create(req, res) {
         var post;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, post_1.Post.create(req.params.data)];
+                case 0: return [4 /*yield*/, post_1.Post.create(req.body)];
                 case 1:
                     post = _a.sent();
                     res.json(post);

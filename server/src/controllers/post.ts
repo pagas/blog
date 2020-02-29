@@ -15,7 +15,7 @@ function removeId(req:Request, res:Response) {
 }
 
 async function create(req:Request, res:Response) {
-    const post = await Post.create(req.params.data);
+    const post = await Post.create(req.body);
     res.json(post);
 }
 
