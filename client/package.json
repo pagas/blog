@@ -42,7 +42,7 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "faker": "^4.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "nodemon": "^2.0.2",
     "redux-devtools-extension": "^2.13.8",
     "shortid": "^2.2.15",
